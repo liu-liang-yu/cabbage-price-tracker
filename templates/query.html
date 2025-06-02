@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>高麗菜價格查詢</title>
+</head>
+<body>
+    <h1>高麗菜價格紀錄</h1>
+    <form method="get" action="/query">
+        起始日期：<input type="date" name="start_date">
+        結束日期：<input type="date" name="end_date">
+        <button type="submit">查詢</button>
+    </form>
+    <table border="1">
+        <tr>
+            <th>日期</th>
+            <th>價格（元/斤）</th>
+            <th>資料來源</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td><a href="{{ row[2] }}" target="_blank">{{ row[2] }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="/">回首頁</a></p>
+</body>
+</html>

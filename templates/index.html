@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>高麗菜價格輸入</title>
+</head>
+<body>
+    <h1>新增高麗菜價格</h1>
+    <form action="/add" method="post">
+        日期：<input type="date" name="date" required><br>
+        價格（元/斤）：<input type="number" name="price" required><br>
+        資料來源網址：<input type="url" name="source"><br>
+        <button type="submit">送出</button>
+    </form>
+    <p><a href="/query">查詢價格紀錄</a></p>
+</body>
+</html>
