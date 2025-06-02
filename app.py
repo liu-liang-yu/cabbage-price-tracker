@@ -7,7 +7,7 @@ DB_NAME = 'cabbage.db'
 
 def init_db():
     with sqlite3.connect(DB_NAME) as conn:
-        with open('schema.sql', 'r') as f:
+        with open('schema.sql', 'r', encoding='utf-8') as f:
             conn.executescript(f.read())
 
 @app.route('/')
